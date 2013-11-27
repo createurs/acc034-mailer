@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACC - Notifications</title>
+  
+  <style type="text/css">
+  /* Force Outlook to provide a "view in browser" menu link. */
+  #outlook a {padding:0;} 
+  
+  /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+  body {width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+  
+  /* Force Hotmail to display emails at full width */ 
+  .ExternalClass {width:100%;}
+  
+  /* Force Hotmail to display normal line spacing. */
+  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;} 
+  
+  /* Some sensible defaults for images */
+  img {display:block; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic;}
+  
+  /* Yahoo paragraph fix */
+  p {margin:1em 0;}
+  
+  /* Table wrapper */
+  #backgroundTable {margin:0; padding:0; width:100% !important; line-height:100% !important;}
+  
+  /* Outlook 07, 10 Padding issue */
+  table td {border-collapse:collapse; padding:0;}
+  
+  /* Link styles */
+  a:link {color:#0061aa;}
+  a:visited {color:#0061aa;}
+  a:hover {color:#00a2e5;}
+  
+  /* Custom styles */
+  html,body {
+    background-color: #f4f4f4;
+  }
+  
+  .split {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #333333 !important;
+  }
+  
+  td.intro h1 {
+    display: block;
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 100%;
+    color: #333333 !important;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.05em;
+  }
+  
+  td.intro p {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 18px;
+    color: #666666;
+    padding: 0;
+  }
+  
+  td.intro strong {
+    font-weight: bold;
+    color: #333333;
+  }
+    
+  td.contentblock h2 {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 20px;
+    color: #333333 !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  td.contentblock-third {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;    
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  td.contentblock-third h3 {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1;
+    color: #333333 !important;
+    margin: 0 0 20px;
+    padding: 0; 
+    height: 30px;
+    overflow: hidden;
+  }
+
+  td.block {
+    background: #f4f4f4;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  td.block h3, td.contentblock h3 {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  td.contentblock p, td.block p {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 18px;
+    color: #666666;
+    padding: 0;
+  }
+  
+  .blue {color:#00a2e5 !important;}
+  .red {color:#b22222 !important;}
+  .orange {color:#f4932f !important;}
+  .green {color:#43b77a !important;}
+  
+  td.contentblock ul, td.block ul {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 18px;
+    list-style: outside;
+    color: #666666;
+    margin-left: 2.5em;
+    padding: 0;
+  }
+
+  td.well {
+    background: #f7f7f9;
+    border-color: #e1e1e8;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .button {
+    background-color: #00a2e5;
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  td.footer p {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: #888888;
+    padding: 0;
+  }
+  </style>
+
+  <style type="text/css" data-immutable>
+  /* Note: the data-immutable means it's not rendered inline */
+  /* Mobile targeting - DO NOT BRING INLINE */
+  @media only screen and (max-device-width: 480px) {
+
+    .hide {
+      display: none !important;
+    }
+
+    td.intro h1 {
+      font-size: 68px !important;
+      line-height: 42px !important;
+    }
+
+    td.intro p {
+      font-size: 22px !important;
+      line-height: 30px !important;
+    }
+
+    td.intro span {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    td.block {
+      padding-top: 20px !important;
+    }
+
+    td.contentblock h2 {
+      font-size: 36px !important;
+      line-height: 36px !important;
+    }
+
+    td.block h3 {
+      font-size: 28px !important;
+    }
+
+    td.contentblock p, td.block p,
+    td.contentblock ul, td.block ul {
+      font-size: 22px !important;
+      line-height: 30px !important;
+    }
+    
+    table.button {
+      font-size: 22px !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    td.footer p {
+      font-size: 18px !important;
+      line-height: 24px !important;
+    }
+
+  }
+  </style>
+</head>
+
+<body>
+  <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f4f4f4" id="backgroundTable">
+    <tr>
+      <td>
+        
+        <table width="740" cellpadding="0" cellspacing="0" border="0" align="center" class="hide">
+          <tr>
+            <td height="40"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="40" /></td>
+          </tr>
+        </table>
+        
+        <table width="740" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#ffffff">
+          <tr>
+            <td colspan="3"><img src="http://dev.createur.com.au/edm/acc/images/top.gif" width="740" height="50" /></td>
+          </tr>
+          <tr>
+            <td width="50"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="50" height="1" /></td>
+            <td>
+              
+              <table width="640" cellpadding="0" cellspacing="0" border="0" class="split">
+                <tr>
+                  <td align="left" valign="top"><img src="http://dev.createur.com.au/edm/acc/images/ACC-logo-2x.gif" alt="ACC" width="142" height="67" /></td>
+                  <td align="right" valign="bottom"><img src="http://dev.createur.com.au/edm/acc/images/tagline-2x.gif" alt="Engage. Inform. Inspire." width="213" height="20" /></td>
+                </tr>
+                <tr>
+                  <td height="30" colspan="2"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="30" /></td>
+                </tr>
+              </table>
+
+              <!-- YIELD -->
+
+              <table width="640" cellpadding="0" cellspacing="0" border="0" class="split">
+                <tr>
+                  <td height="30" colspan="2"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="30" /></td>
+                </tr>
+                <tr>
+                  <td width="70" align="left" valign="top"><img src="http://dev.createur.com.au/edm/acc/images/hello-icon-2x.gif" alt="" width="70" height="50" /></td>
+                  <td width="570" align="left" valign="top" class="intro">
+                    <h1>Hello <%= @user.name %></h1>
+                    <p>Your <strong>Excel Report</strong> for <strong> <%= @coordinator %> </strong> is attached.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="10" colspan="2"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="10" /></td>
+                </tr>
+              </table>
+
+              <table width="640" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td height="30"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="30" /></td>
+                </tr>
+                <tr>
+                  <td align="left" valign="top" class="contentblock">
+                    <img align="left" class="hide" src="http://dev.createur.com.au/edm/acc/images/services-icon@2x.gif" alt="" width="30" height="20" /><h2><%= @coordinator %></h2>
+                    <br>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    The Excel report you requested is attached.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="left" valign="top" class="contentblock">
+                    <p>Sincerely,<br>
+                    The ACC Team.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="40"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="40" /></td>
+                </tr>
+                <tr>
+                  <td>
+                    <table cellpadding="0" cellspacing="0" border="0" align="left" class="button">
+                      <tr>
+                        <td width="15">&nbsp;</td>
+                        <td height="40" align="center" valign="middle"><%= link_to "Log in", root_url %></td>
+                        <td width="15">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="40"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="40" /></td>
+                </tr>
+              </table>
+
+              <!-- END YIELD -->
+
+              <table width="640" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td height="20"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="20" /></td>
+                </tr>
+                <tr>
+                  <td align="left" valign="top" class="footer">
+                    <p>You are subscribed to receive email notifications from ACC.</p>
+                    <p>&copy; 2012 ACC. All rights reserved.  <a href="http://support.acctv.co/entries/21733662-terms-of-use">Terms of use</a>  |  <a href="http://support.acctv.co/entries/21751698-privacy-policy">Privacy</a>  |  <a href="http://support.acctv.co/home">Contact Us</a></p>
+                  </td>
+                </tr>
+              </table>
+              
+            </td>            
+            <td width="50"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="50" height="1" /></td>
+          </tr>
+          <tr>
+            <td colspan="3"><img src="http://dev.createur.com.au/edm/acc/images/bottom.gif" alt="" title="" width="740" height="43" /></td>
+          </tr>
+        </table>
+        
+        <table width="740" cellpadding="0" cellspacing="0" border="0" align="center" class="hide">
+          <tr>
+            <td height="40"><img src="http://dev.createur.com.au/edm/acc/images/spacer.gif" width="1" height="40" /></td>
+          </tr>
+        </table>
+        
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
